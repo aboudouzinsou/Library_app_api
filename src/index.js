@@ -1,3 +1,4 @@
+// src/index.js
 const express = require('express');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
@@ -9,9 +10,9 @@ const cronJobs = require('./utils/cronJobs');
 
 // Load environment variables
 if (process.env.NODE_ENV === 'production') {
-  dotenv.config({ path: '../.env.production' });
+  dotenv.config({ path: '../.env.production.local' });
 } else {
-  dotenv.config({ path: '../.env.development' });
+  dotenv.config({ path: '../.env.development.local' });
 }
 
 const app = express();
