@@ -9,7 +9,6 @@ const {
   searchBooks,
 } = require('../controllers/bookController');
 
-
 /**
  * @swagger
  * /api/books:
@@ -126,6 +125,5 @@ router.delete('/:id', [auth, adminAuth], deleteBook);
  *                 $ref: '#/components/schemas/Book'
  */
 router.get('/search', searchBooks);
-
 
 module.exports = router;
