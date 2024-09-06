@@ -1,4 +1,3 @@
-// src/models/Loan.js
 const mongoose = require('mongoose');
 
 const LoanSchema = new mongoose.Schema({
@@ -19,6 +18,11 @@ const LoanSchema = new mongoose.Schema({
   returnDate: {
     type: Date,
     required: true,
+  },
+  status: {
+    type: String,
+    enum: ['borrowed', 'returned', 'overdue'],
+    default: 'borrowed',
   },
 });
 
