@@ -1,10 +1,17 @@
-// src/index.js
 const express = require('express');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const bookRoutes = require('./routes/books');
 const loanRoutes = require('./routes/loans');
 const { swaggerUi, specs } = require('./swagger');
+const dotenv = require('dotenv');
+
+// Load environment variables
+if (process.env.NODE_ENV === 'production') {
+  dotenv.config({ path: '../.env.production' });
+} else {
+  dotenv.config({ path: '../.env.development' });
+}
 
 const app = express();
 
