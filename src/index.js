@@ -10,9 +10,9 @@ const cronJobs = require('./utils/cronJobs');
 
 // Load environment variables
 if (process.env.NODE_ENV === 'production') {
-  dotenv.config({ path: '../.env.production.local' });
+  dotenv.config({ path: '.env.production.local' });
 } else {
-  dotenv.config({ path: '../.env.development.local' });
+  dotenv.config({ path: '.env.development.local' });
 }
 
 const app = express();
