@@ -5,6 +5,7 @@ const bookRoutes = require('./routes/books');
 const loanRoutes = require('./routes/loans');
 const { swaggerUi, specs } = require('./swagger');
 const dotenv = require('dotenv');
+const cronJobs = require('./utils/cronJobs');
 
 // Load environment variables
 if (process.env.NODE_ENV === 'production') {
