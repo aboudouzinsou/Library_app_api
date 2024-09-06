@@ -2,6 +2,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
+const bookRoutes = require('./routes/books');
 const { swaggerUi, specs } = require('./swagger');
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json({ extended: false }));
 
 // Define Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/books', bookRoutes);
 
 // Swagger Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
