@@ -135,7 +135,7 @@ This project is licensed under the Apache 2.0 LICENSE  See the [LICENSE](LICENSE
 
 ## Contact
 
-For any questions or suggestions, please contact [your-email@example.com](mailto:your-email@example.com).
+For any questions or suggestions, please contact [faboudou.zinsou@gmail.com](mailto:faboudou.zinsou@gmail.com).
 
 ---
 
