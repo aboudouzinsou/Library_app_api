@@ -1,5 +1,6 @@
 const Book = require('../models/Book');
 const Loan = require('../models/Loan');
+const User = require('../models/User');
 const sendEmail = require('../utils/sendEmail');
 
 const borrowBook = async (req, res) => {
@@ -11,8 +12,8 @@ const borrowBook = async (req, res) => {
       return res.status(404).json({ msg: 'Book not found' });
     }
 
-    if (!book.available) {
-      return res.status(400).json({ msg: 'Book is not available' });
+    if (book.copies <= 0) {
+      return res.status(400).json({ msg: 'No copies available' });
     }
 
     const newLoan = new Loan({
@@ -23,7 +24,7 @@ const borrowBook = async (req, res) => {
     });
 
     await newLoan.save();
-    book.available = false;
+    book.copies -= 1;
     await book.save();
 
     // Send email notification
@@ -49,10 +50,11 @@ const returnBook = async (req, res) => {
     }
 
     const book = await Book.findById(loan.book);
-    book.available = true;
+    book.copies += 1;
     await book.save();
 
-    await Loan.findByIdAndRemove(loanId);
+    loan.status = 'returned';
+    await loan.save();
 
     res.json({ msg: 'Book returned' });
   } catch (err) {
