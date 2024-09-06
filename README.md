@@ -31,7 +31,7 @@ The Library Management API is a web application that allows users to manage an o
 ## 🛠️ Technologies Used
 
 - **Backend:** Node.js, Express
-- **Database:** MongoDB (or another NoSQL database)
+- **Database:** MongoDB 
 - **Authentication:** JWT (JSON Web Tokens)
 - **Notifications:** Nodemailer for emails
 - **API Documentation:** Swagger
