@@ -131,7 +131,7 @@ Contributions are welcome! To contribute to this project, please follow these st
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the Apache 2.0 LICENSE  See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
