@@ -1,3 +1,4 @@
+
 const Book = require('../models/Book');
 
 const getBooks = async (req, res) => {
@@ -16,7 +17,7 @@ const addBook = async (req, res) => {
     const newBook = new Book({
       title,
       author,
-      genre,
+      genre
     });
 
     const book = await newBook.save();
@@ -28,7 +29,7 @@ const addBook = async (req, res) => {
 };
 
 const updateBook = async (req, res) => {
-  const { title, author, genre } = req.body;
+  const { title, author, genre, copies } = req.body;
   try {
     let book = await Book.findById(req.params.id);
     if (!book) {
@@ -38,6 +39,7 @@ const updateBook = async (req, res) => {
     book.title = title;
     book.author = author;
     book.genre = genre;
+    book.copies = copies;
 
     book = await book.save();
     res.json(book);
