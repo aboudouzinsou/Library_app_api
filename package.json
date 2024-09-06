@@ -4,7 +4,9 @@
   "description": "This project is an online library management application that allows users to manage a library of books. Users can add, delete, update, and search for books. The application also enables users to lend books to other users and track borrowed books.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node src/index.js",
+    "dev": "NODE_ENV=development nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
