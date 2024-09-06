@@ -7,6 +7,7 @@ const options = {
     info: {
       title: 'Library Management API',
       version: '1.0.0',
+      description: 'API for managing a library, including user authentication, book management, and loan tracking.',
     },
     components: {
       schemas: {
@@ -22,8 +23,8 @@ const options = {
             genre: {
               type: 'string',
             },
-            available: {
-              type: 'boolean',
+            copies: {
+              type: 'number',
             },
           },
         },
@@ -43,6 +44,9 @@ const options = {
               type: 'string',
               enum: ['user', 'admin'],
             },
+            points: {
+              type: 'number',
+            },
           },
         },
         Loan: {
@@ -61,6 +65,10 @@ const options = {
             returnDate: {
               type: 'string',
               format: 'date-time',
+            },
+            status: {
+              type: 'string',
+              enum: ['borrowed', 'returned', 'overdue'],
             },
           },
         },
