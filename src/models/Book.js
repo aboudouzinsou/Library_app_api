@@ -13,9 +13,9 @@ const BookSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  available: {
-    type: Boolean,
-    default: true,
+  copies: {
+    type: Number,
+    default: 1, // Number of copies available
   },
 });
 
